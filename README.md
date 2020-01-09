@@ -41,6 +41,17 @@ are cached by version, so multiple projects referring to different GraalVM versi
 No locking is performed to check the atomicity of changes to the cache, so users should not expect this plugin to be
 well behaved when populating the cache from parallel processes.
 
+Preconditions when using on Windows
+-----------------------------------
+
+GraalVM [needs](https://github.com/oracle/graal/issues/1258) the [Microsoft Windows SDK for Windows 7 and .NET Framework 4](https://www.microsoft.com/en-us/download/details.aspx?id=8442) as well as [the C compilers from KB2519277](https://stackoverflow.com/a/45784634/873282).
+
+You can install it using [chocolatey](https://chocolatey.org/):
+
+    choco install windows-sdk-7.1 kb2519277
+
+Start the "Windows SDK 7.1 Command Prompt" and execute `native-iamge.cmd` from there.
+
 Contributions
 -------------
 Contributions are welcome. For larger feature requests or contributions, we prefer discussing the proposed change on 
